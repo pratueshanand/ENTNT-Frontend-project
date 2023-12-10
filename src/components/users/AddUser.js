@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import axios from 'axios'
 import { useHistory } from "react-router-dom";
+import { createUser } from "../../services/user.service";
 
 const AddUser = () => {
   let history = useHistory();
@@ -11,16 +11,16 @@ const AddUser = () => {
     appointments: []
   });
 
-  const { firstName, lastName, location, appointments } = user;
+  const { firstName, lastName, location } = user;
   const [date,setDate]  = useState("")
   const [time, setTime]  = useState("")
 
   const onInputChange = e => {
-    if(e.target.name=="date"){
+    if(e.target.name==="date"){
       setDate(e.target.value);
       return 
     }
-    if(e.target.name=="time"){
+    if(e.target.name==="time"){
       setTime(e.target.value);
       return
     }
@@ -31,7 +31,7 @@ const AddUser = () => {
     e.preventDefault();
     var userData = user;
     userData={...userData, appointments:[`${date} ${time}`]};
-    await axios.post("http://localhost:3003/users", userData);
+    await createUser(userData);
     history.push("/");
   };
   return (

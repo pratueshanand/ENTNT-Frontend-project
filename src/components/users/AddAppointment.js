@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import axios from "axios";
 import { useHistory, useParams } from "react-router-dom";
+import { getUser, updateUser } from '../../services/user.service';
 
 const AddAppointment = () => {
   let history = useHistory();
@@ -20,11 +20,11 @@ const AddAppointment = () => {
   }, []);
 
   const onInputChange = e => {
-    if(e.target.name=="date"){
+    if(e.target.name==="date"){
       setDate(e.target.value);
       return 
     }
-    if(e.target.name=="time"){
+    if(e.target.name==="time"){
       setTime(e.target.value);
       return
     }
@@ -35,13 +35,13 @@ const AddAppointment = () => {
     e.preventDefault();
     var userData = user;
     userData={...userData, appointments:[...userData.appointments, `${date} ${time}`]};
-    await axios.put(`http://localhost:3003/users/${id}`, userData);
+    await updateUser(id, userData);
     history.push("/");
   };
 
   const loadUser = async () => {
-    const result = await axios.get(`http://localhost:3003/users/${id}`);
-    setUser(result.data);
+    const result = await getUser(id);
+    setUser(result);
   };
 
   return (

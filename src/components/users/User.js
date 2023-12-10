@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
-import axios from "axios";
+import { getUser } from "../../services/user.service";
 
 const User = () => {
   const [user, setUser] = useState({
@@ -18,14 +18,14 @@ const User = () => {
   }, []);
 
   const loadUser = async () => {
-    const res = await axios.get(`http://localhost:3003/users/${id}`);
-    setUser(res.data);
+    const res = await getUser(id);
+    setUser(res);
   };
   
   return (
     <div className="container py-4">
       <Link className="btn btn-primary" to="/">
-        back to Home
+        Back to Home
       </Link>
       <h1 className="display-4">User Id: {id}</h1>
       <hr />
@@ -33,7 +33,9 @@ const User = () => {
         <li className="list-group-item">First Name: {firstName}</li>
         <li className="list-group-item">Last Name: {lastName}</li>
         <li className="list-group-item">Location: {location}</li>
-        <li className="list-group-item">Appointment: {appointments}</li>
+        <li className="list-group-item">Appointment: {appointments.map(
+          (appointment, index)=> <div key="index"> {appointment} </div>
+        )}</li>
       </ul>
     </div>
   );

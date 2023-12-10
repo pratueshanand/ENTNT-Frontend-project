@@ -1,0 +1,64 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "firstName": "John",
+      "lastName": "Doe",
+      "location": "Metropolis, State",
+      "appointments": [
+        {
+          "dateTime": "2023-12-09 10:00:00"
+        },
+        {
+          "dateTime": "2023-12-15 14:30:00"
+        },
+        {
+          "dateTime": "2023-12-20 16:45:00"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "firstName": "Alice",
+      "lastName": "Smith",
+      "location": "Gotham, State",
+      "appointments": [
+        {
+          "dateTime": "2023-12-12 11:15:00"
+        },
+        {
+          "dateTime": "2023-12-18 13:45:00"
+        },
+        {
+          "dateTime": "2023-12-23 17:30:00"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "firstName": "Bob",
+      "lastName": "Johnson",
+      "location": "Star City, State",
+      "appointments": [
+        {
+          "dateTime": "2023-12-11 09:30:00"
+        },
+        {
+          "dateTime": "2023-12-17 12:00:00"
+        },
+        {
+          "dateTime": "2023-12-22 15:15:00"
+        }
+      ]
+    },
+    {
+      "firstName": "Pratuesh",
+      "lastName": "anand",
+      "location": "tyuik",
+      "appointments": [
+        "2023-12-13 15:43"
+      ],
+      "id": "nT3WDC6"
+    }
+  ]
+}

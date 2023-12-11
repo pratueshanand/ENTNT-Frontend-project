@@ -36,6 +36,7 @@ const AddAppointment = () => {
     var userData = user;
     userData={...userData, appointments:[...userData.appointments, `${date} ${time}`]};
     await updateUser(id, userData);
+    alert("Appointment Added Successfully!");
     history.push("/");
   };
 

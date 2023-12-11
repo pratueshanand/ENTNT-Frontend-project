@@ -32,6 +32,7 @@ const AddUser = () => {
     var userData = user;
     userData={...userData, appointments:[`${date} ${time}`]};
     await createUser(userData);
+    alert("Client Added Successfully!");
     history.push("/");
   };
   return (
@@ -89,7 +90,7 @@ const AddUser = () => {
               onChange={e => onInputChange(e)}
             />
           </div>
-          <button className="btn btn-primary btn-block">Add User</button>
+          <button className="btn btn-primary btn-block">Add Client</button>
         </form>
       </div>
     </div>

@@ -25,6 +25,7 @@ const EditUser = () => {
   const onSubmit = async e => {
     e.preventDefault();
     await updateUser(id, user);
+    alert("Details Updated Successfully!");
     history.push("/");
   };
 
@@ -35,7 +36,7 @@ const EditUser = () => {
   return (
     <div className="container">
       <div className="w-75 mx-auto shadow p-5">
-        <h2 className="text-center mb-4">Edit A User</h2>
+        <h2 className="text-center mb-4">Edit Client Details</h2>
         <form onSubmit={e => onSubmit(e)}>
           <div className="form-group">
             <input
@@ -67,7 +68,7 @@ const EditUser = () => {
               onChange={e => onInputChange(e)}
             />
           </div>
-          <button className="btn btn-warning btn-block">Update User</button>
+          <button className="btn btn-warning btn-block">Update Client Details</button>
         </form>
       </div>
     </div>

@@ -20,7 +20,7 @@ const Home = () => {
 
   const deleteUser = async (id) => {
     await eraseUser(id);
-    alert("User Deleted Successfully");
+    alert("Client Deleted Successfully!");
     loadUsers();
   };
 
@@ -32,13 +32,14 @@ const Home = () => {
   const deleteAppointment = async (user, appointment) => {
     user.appointments = user.appointments.filter((app) => app !== appointment);
     await updateUser(user.id, user);
+    alert("Appointment Deleted Successfully!")
     loadUsers();
   };
 
   return (
     <div className="container">
       <div className="py-4">
-        <h1>All Users</h1>
+        <h1>All Clients</h1>
         <table className="table border shadow">
           <thead className="thead-dark">
             <tr>
@@ -114,13 +115,13 @@ const Home = () => {
                       className="btn btn-primary w-50"
                       to={`/users/${user.id}`}
                     >
-                      View User Details
+                      View Client Details
                     </Link>
                     <Link
                       className="btn btn-outline-primary w-50"
                       to={`/users/edit/${user.id}`}
                     >
-                      Edit User Details
+                      Edit Client Details
                     </Link>
                   </div>
                   <div className="d-flex mb-2" style={{ gap: "10px" }}>
@@ -134,7 +135,7 @@ const Home = () => {
                       className="btn btn-danger w-50"
                       onClick={() => deleteUser(user.id)}
                     >
-                      Delete User
+                      Delete Client
                     </Link>
                   </div>
                 </td>

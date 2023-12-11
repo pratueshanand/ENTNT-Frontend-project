@@ -18,7 +18,7 @@ const Navbar = () => {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <Link className="btn btn-outline-light" to="/users/add">Add User</Link>
+        <Link className="btn btn-outline-light" to="/users/add">Add Client</Link>
       </div>
     </nav>
   );

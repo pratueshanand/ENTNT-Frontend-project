@@ -27,7 +27,7 @@ const User = () => {
       <Link className="btn btn-primary" to="/">
         Back to Home
       </Link>
-      <h1 className="display-4">User Id: {id}</h1>
+      <h1 className="display-4">Client Id: {id}</h1>
       <hr />
       <ul className="list-group w-50">
         <li className="list-group-item">First Name: {firstName}</li>
